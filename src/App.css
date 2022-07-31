@@ -1,38 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  overflow: scroll;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2em;
+}
+.container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: space-around;
+}
+
+.card {
+  max-width: 300px;
+  max-height: 400px;
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  padding: 7rem 0 0;
+  line-height: 2ch;
+  overflow: hidden;
+}
+
+.title {
+  height: 20%;
+  border-bottom: 1px solid gray;
+}
+
+.description_and_rating {
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+.description {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  align-items: center;
+}
+.rating {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 10px;
+}
+.rating_background {
+  width: 40px;
+  height: 20px;
+  background-color: orangered;
+  padding-left: 1em;
+  border-radius: 1px;
+}
+
+.card_content {
+  height: 400px;
+  background-color: hsl(10 0% 100% / 0.8);
+  padding: 2em;
+  transform: translateY(400px);
+  transition: transform 500ms ease;
+}
+
+.card:hover .card_content {
+  transform: translateY(0);
+  text-decoration: none;
+}
+
+/* movie details card */
+.movieDetailsCard_container {
+  width: 100%;
+  height: 100vh;
+  /* border: 2px solid green; */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: black;
+  opacity: 0.4;
+}
+.movie_card {
+  width: 350px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  transition: all 500ms ease;
+  z-index: 1;
+}
+.movie_card:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.movie_card_div {
+  width: 45%;
+  height: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.movie_card_desc_div {
+  width: 45%;
+  height: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  z-index: 1;
+}
+
+.movie_title {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.movie_des {
+  color: white;
+}
+.genre {
+  width: 100%;
+  height: 10%;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: center;
+}
+.genre_card {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  padding: 0.1em;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.genre_card p {
+  padding: 0.2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.trailer_button {
+  width: 300px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
+.trailer_button:hover {
+  transform: translateY(-5px);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+/*end of movie details card */
